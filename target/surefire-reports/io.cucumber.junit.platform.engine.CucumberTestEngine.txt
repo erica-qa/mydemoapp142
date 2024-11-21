@@ -1,0 +1,57 @@
+-------------------------------------------------------------------------------
+Test set: io.cucumber.junit.platform.engine.CucumberTestEngine
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.800 s <<< FAILURE! -- in io.cucumber.junit.platform.engine.CucumberTestEngine
+Comprar Produto.Comprar com Sucesso -- Time elapsed: 0.131 s <<< ERROR!
+io.cucumber.junit.platform.engine.UndefinedStepException: 
+The step 'que acesso o My Demo App' and 6 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Dado("que acesso o My Demo App")
+public void que_acesso_o_my_demo_app() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Dado("verifico o logo e nome da secao")
+public void verifico_o_logo_e_nome_da_secao() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Dado("localizo o <produto> que esta por <preco>")
+public void localizo_o_produto_que_esta_por_preco() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Quando("clico na imagem do <num_produto>")
+public void clico_na_imagem_do_num_produto() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Entao("na tlea do produto verifico o <produto> e o <preco>")
+public void na_tlea_do_produto_verifico_o_produto_e_o_preco() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Quando("arrasto para cima e clico no botao Add Cart")
+public void arrasto_para_cima_e_clico_no_botao_add_cart() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Entao("na tela do carrinho verifico o <produto> <preco> e <quantidade>")
+public void na_tela_do_carrinho_verifico_o_produto_preco_e_quantidade() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+	at io.cucumber.core.runtime.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:69)
+	at io.cucumber.junit.platform.engine.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:22)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.lambda$runTestCase$4(CucumberEngineExecutionContext.java:116)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:136)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:136)
+	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.runTestCase(CucumberEngineExecutionContext.java:111)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:168)
+	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+

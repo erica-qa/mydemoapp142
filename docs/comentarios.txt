@@ -1,0 +1,57 @@
+Teste Mobile
+--> testes de aplicativos para celulares e tablets
+--> também de app para relógio, central de mídia, smartTV
+
+Vamos usar o framework chamado Appium
+- Trabalha tanto Android quanto IOS, traz praticidade, sendo a mesma forma de configurar
+- É uma vertente do Selenium WebDriver voltada para teste de app
+- Trabalha com múltipolos sistemas operacionais
+- Trabalha com múltiplas linguagens de programação: C#, Java, JavaScript e Python
+
+Tipos de aplicativos
+- WebApp (site configurado para parecer um aplicativo)
+- Nativo - um projeto separado para Android e outros para IOS
+- Híbrido - um projeto gera apps para Android e IOS
+
+Requisitos de Hardware
+- Processador Intel i5 ou i7 (poderia até ser i9 para quem tem mais recursos)
+- Família do processador 12--> Lançado em 2022 em diante
+- Memória RAM: 8GB --> 16GB (quanto mais melhor: 32 GB)
+- Placa de Vídeo offboard
+- Disco Rígido: SSD 256GB (pelo menos para o boot)
+
+Ambiente de Teste em Nuvem = Também conhecido como Device Farms (Fazenda de Dispositivos)
+- SauceLabs --> No curso utilizaremos essa. Iremos criar uma conta. https://saucelabs.com/
+- BrowserStack
+- Perfecto (da Microsoft)
+- Entre outras
+
+Ambientes de Teste (onde pode testar)
+- Em um aparelho de celular, conectado a um computador por um cabo USB (Precisa colocar o aparelho em modo desenvolvedor. Consultar marca e modelo do celular no YouTube)
+- Emulador instalado no seu computador/notebook (é um tipo de Virtual Machine - VM)
+- Device Farms, que pode ter tanto aparelhos físicos quanto Emulador
+
+Compatibilidade com Android e IOS
+- Computadores com Windows ou Linux, sejam com processadores Intel ou AMD só serve como ambiente para Android por emulador (consegue por aparelho físico/iPhone ou device farm)
+- MacBook ou computador Mac podem conectar ou emular tanto Android quanto IOS
+- Existe um procedimento descrito na Internet para criar uma VM de MacOS para rodar Windows
+
+Pegar App do site https://apkpure.com/br
+
+Existem 2 (dois) softwares chamados Appium (appium é uma família, assim como o Selenium):
+- Appium Desktop (também chamado de Appium Server) que é um gerenciador de automação de aplicativos. Precisamos desse Appium Desktop quando vamos testar em um aparelho físico ou emulador direto do nosso computador.
+Seria o motor por trás de uma Device Farm.
+- Appium Inspector que serve para inspecionar os elementos de um App
+
+O DeviceName (nome do aparelho) em um emulador ou aparelho físico é sempre emulator5553.
+Você pode ligar vários aparelhos ou emuladores ao mesmo tempo, eles vão se chamar: emulator5554, emulator5555 e assim por diante
+No Device Farm tem que ver o nome do aparelho mesmo.
+
+Roteiro de Inspeção:
+- Instalar o aplicativo alvo e o Apk Info
+- Usar o Apk Info para descobrir:
+  1 - AppPackage: com.saucelabs.mydemoapp.android
+  2 - AppActivity:  com.saucelabs.mdemoapp.android.view.activities.SplashActivity ou com.saucelabs.mdemoapp.android.view.activities.MainActivity
+- Baixar e instalar o Appium Inspector
+- Configurar o Appium Inspector para acessar o app no SauceLabs com as informações do ApkInfo
+- Usar o Appium Inspector para mapear os elementos e exportar o script de teste
