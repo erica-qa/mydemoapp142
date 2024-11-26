@@ -1,57 +1,34 @@
 -------------------------------------------------------------------------------
 Test set: io.cucumber.junit.platform.engine.CucumberTestEngine
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.800 s <<< FAILURE! -- in io.cucumber.junit.platform.engine.CucumberTestEngine
-Comprar Produto.Comprar com Sucesso -- Time elapsed: 0.131 s <<< ERROR!
-io.cucumber.junit.platform.engine.UndefinedStepException: 
-The step 'que acesso o My Demo App' and 6 other step(s) are undefined.
-You can implement these steps using the snippet(s) below:
+Tests run: 2, Failures: 1, Errors: 1, Skipped: 0, Time elapsed: 120.7 s <<< FAILURE! -- in io.cucumber.junit.platform.engine.CucumberTestEngine
+Exemplos.Example #1.1 -- Time elapsed: 69.80 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Cart> but was: <Sauce Labs Backpack>
+	at steps.ComprarProduto.na_tela_do_carrinho_verifico_o_produto_preco_e_quantidade(ComprarProduto.java:144)
+	at ✽.na tela do carrinho verifico o "Sauce Labs Backpack" "$ 29.99" e 1(file:///C:/Iterasys/mydemoapp142/src/test/resources/features/ComprarProduto.feature:11)
 
-@Dado("que acesso o My Demo App")
-public void que_acesso_o_my_demo_app() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Dado("verifico o logo e nome da secao")
-public void verifico_o_logo_e_nome_da_secao() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Dado("localizo o <produto> que esta por <preco>")
-public void localizo_o_produto_que_esta_por_preco() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Quando("clico na imagem do <num_produto>")
-public void clico_na_imagem_do_num_produto() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Entao("na tlea do produto verifico o <produto> e o <preco>")
-public void na_tlea_do_produto_verifico_o_produto_e_o_preco() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Quando("arrasto para cima e clico no botao Add Cart")
-public void arrasto_para_cima_e_clico_no_botao_add_cart() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Entao("na tela do carrinho verifico o <produto> <preco> e <quantidade>")
-public void na_tela_do_carrinho_verifico_o_produto_preco_e_quantidade() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-
-	at io.cucumber.core.runtime.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:69)
-	at io.cucumber.junit.platform.engine.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:22)
-	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.lambda$runTestCase$4(CucumberEngineExecutionContext.java:116)
-	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:136)
-	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
-	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:136)
-	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.runTestCase(CucumberEngineExecutionContext.java:111)
-	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:168)
-	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:90)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Exemplos.Example #1.2 -- Time elapsed: 50.77 s <<< ERROR!
+org.openqa.selenium.NoSuchElementException: 
+An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [2a970712408a4417811ba6eb2c0d76bb, findElement {using=xpath, value=//android.widget.TextView[@content-desc="Product Title" and @text="Sauce Labs Bike Light"]}]
+Capabilities {appium:app: /tmp/tmpASLuUt/mda-2.2.0-25..., appium:appActivity: com.saucelabs.mydemoapp.and..., appium:appPackage: com.saucelabs.mydemoapp.and..., appium:automationName: UiAutomator2, appium:chromeOptions: {args: [--disable-fre, --disable-popup-blocking, --enable-automation, --enable-remote-debugging, --ignore-certificate-errors, --metrics-recording-only, --no-first-run, --disable-search-geolocatio..., --disable-gpu-rasterization, --ignore-certificate-errors...], w3c: false}, appium:connectHardwareKeyboard: true, appium:databaseEnabled: false, appium:desired: {app: /tmp/tmpASLuUt/mda-2.2.0-25..., appActivity: com.saucelabs.mydemoapp.and..., appPackage: com.saucelabs.mydemoapp.and..., automationName: UiAutomator2, browserName: , chromeOptions: {args: [--disable-fre, --disable-popup-blocking, --enable-automation, --enable-remote-debugging, --ignore-certificate-errors, --metrics-recording-only, --no-first-run, --disable-search-geolocatio..., --disable-gpu-rasterization, --ignore-certificate-errors...], w3c: false}, connectHardwareKeyboard: true, deviceName: Samsung Galaxy S9 FHD Googl..., deviceOrientation: portrait, ensureWebviewsHavePages: true, eventTimings: true, maxTypingFrequency: 8, nativeWebScreenshot: true, newCommandTimeout: 3600, noReset: true, noSign:noSign: true, orientation: PORTRAIT, platformName: ANDROID, platformVersion: 9.0, proxy: {proxyAutoconfigUrl: http://127.0.0.1:19876/pac.js, proxyType: pac}, selenium:webdriver.remote.quietExceptions: false, udid: emulator-5554}, appium:deviceApiLevel: 28, appium:deviceManufacturer: Google, appium:deviceModel: Android SDK built for x86_64, appium:deviceName: emulator-5554, appium:deviceOrientation: portrait, appium:deviceScreenDensity: 480, appium:deviceScreenSize: 1080x2220, appium:deviceUDID: emulator-5554, appium:ensureWebviewsHavePages: true, appium:eventTimings: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:maxTypingFrequency: 8, appium:nativeWebScreenshot: true, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 3600, appium:noReset: true, appium:orientation: PORTRAIT, appium:pixelRatio: 3, appium:platformVersion: 9, appium:statBarHeight: 72, appium:takesScreenshot: true, appium:udid: emulator-5554, appium:viewportRect: {height: 2004, left: 0, top: 72, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, noSign:noSign: true, platformName: ANDROID, proxy: Proxy(pac: http://127.0.0.1..., selenium:webdriver.remote.quietExceptions: false}
+Session ID: 2a970712408a4417811ba6eb2c0d76bb
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at steps.ComprarProduto.localizo_o_que_esta_por(ComprarProduto.java:85)
+	at ✽.localizo o "Sauce Labs Bike Light" que esta na posicao 6 por "$ 9.99"(file:///C:/Iterasys/mydemoapp142/src/test/resources/features/ComprarProduto.feature:7)
 
