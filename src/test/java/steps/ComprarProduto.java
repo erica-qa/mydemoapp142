@@ -35,6 +35,21 @@ public class ComprarProduto {
         return null;
     }
 
+    public void arrastaParaCima(Integer xInicio, Integer yInicio, Integer xFim, Integer yFim){
+    // Arrastar para cima
+    final var finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+    var start = new Point(xInicio,yInicio);
+    var end = new Point(xFim,yFim);
+    var swipe = new Sequence(finger, 1);
+    swipe.addAction(finger.createPointerMove(Duration.ofMillis(0),
+            PointerInput.Origin.viewport(), start.getX(), start.getY()));
+    swipe.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
+    swipe.addAction(finger.createPointerMove(Duration.ofMillis(1000),
+            PointerInput.Origin.viewport(), end.getX(), end.getY()));
+    swipe.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+    driver.perform(Arrays.asList(swipe));
+    }
+
     @Before
     public void Iniciar() {
         var options = new BaseOptions()
@@ -77,11 +92,15 @@ public class ComprarProduto {
         assertEquals("Products", lblTituloSecao.getText());
     }
 
-    @E("localizo o {string} que esta na posicao {int} por {string}")
-    public void localizo_o_que_esta_por(String produto, Integer num_produto, String preco) {
+    @E("localizo o {string} que na {int} esta na posicao {int} por {string}")
+    public void localizo_o_que_esta_por(String produto, Integer rolagem, Integer num_produto, String preco) {
         // Home
         // produto :
         // preco :
+        for (int i = 0; i < rolagem; i++) {
+            arrastaParaCima(535, 1900, 535, 800);  
+        }
+
         assertEquals(produto, driver.findElement(AppiumBy.xpath(
                 "//android.widget.TextView[@content-desc=\"Product Title\" and @text=\"" + produto + "\"]")).getText());
 
@@ -109,18 +128,8 @@ public class ComprarProduto {
     public void arrasto_para_cima_e_clico_no_botao_add_cart() {
         // Tela do Produto:
         // botão adicionar no carrinho
-        // Arrastar para cima
-        final var finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
-        var start = new Point(525, 1698);
-        var end = new Point(530, 563);
-        var swipe = new Sequence(finger, 1);
-        swipe.addAction(finger.createPointerMove(Duration.ofMillis(0),
-                PointerInput.Origin.viewport(), start.getX(), start.getY()));
-        swipe.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
-        swipe.addAction(finger.createPointerMove(Duration.ofMillis(1000),
-                PointerInput.Origin.viewport(), end.getX(), end.getY()));
-        swipe.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
-        driver.perform(Arrays.asList(swipe));
+        // Arrasta para cima
+        arrastaParaCima(525, 1698, 530, 563);
 
         // Clicar no botão add to chart
         driver.findElement(AppiumBy.id("com.saucelabs.mydemoapp.android:id/cartBt")).click();
@@ -141,17 +150,17 @@ public class ComprarProduto {
         // quantidade:
 
         // Verificar o titulo da seção
-        assertEquals("Cart", driver.findElement(AppiumBy.id("com.saucelabs.mydemoapp.android:id/titleTV")).getText());
+        assertEquals("My Cart", driver.findElement(AppiumBy.id("com.saucelabs.mydemoapp.android:id/productTV")).getText());
 
         // Verificar o titulo do produto
         assertEquals(produto,
-                driver.findElement(AppiumBy.id("com.saucelabs.mydemoapp.android:id/productTV")).getText());
+                driver.findElement(AppiumBy.id("com.saucelabs.mydemoapp.android:id/titleTV")).getText());
 
         // Verificar o preço do produto
         assertEquals(preco, driver.findElement(AppiumBy.id("com.saucelabs.mydemoapp.android:id/priceTV")).getText());
 
         // Verificar a quantidade
-        assertEquals(quantidade,
+        assertEquals(quantidade + " Items",
                 driver.findElement(AppiumBy.id("com.saucelabs.mydemoapp.android:id/itemsTV")).getText());
 
         // Verificar o preço total
